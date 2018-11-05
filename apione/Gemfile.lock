@@ -43,6 +43,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (9.0.0)
+    bcrypt (3.1.12-x86-mingw32)
     bootsnap (1.3.2)
       msgpack (~> 1.0)
     builder (3.2.3)
@@ -63,6 +64,7 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
+    jwt (2.1.0)
     loofah (2.2.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -149,11 +151,13 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
   byebug
   database_cleaner
   factory_bot_rails (~> 4.0)
   faker
+  jwt
   puma (~> 3.11)
   rails (~> 5.2.1)
   rspec-rails (~> 3.5)
