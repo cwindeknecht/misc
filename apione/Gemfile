@@ -41,6 +41,11 @@ end
 # Allows, for example, to get both the todo list and its items
 gem 'active_model_serializers', '~> 0.10.0'
 
+# Pagination of results
+gem 'will_paginate', '~> 3.1.0'
+# Create dummy data
+gem 'faker'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
