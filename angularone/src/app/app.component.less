@@ -1,0 +1,121 @@
+@import '../styles.less';
+
+.todos {
+  .containers(@justifyContent: space-around, @width: 100vw, @height: 100vh);
+  .todos__form {
+    .containers(@width: 40%, @height: 20%);
+    .radius();
+    min-width: 650px;
+    background: lightgrey;
+    padding: 1rem;
+    .form__title {
+      font-size: 2rem;
+      color: orange;
+    }
+    .form__input {
+      .containers(@flexDirection: row);
+      .input__text-box {
+        width: 75%;
+        background: orange;
+        color: purple;
+        font-weight: bold;
+        padding: 0.5rem 1rem 0.5rem 0.5rem;
+        border: 0;
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+        &::placeholder {
+          font-weight: bold;
+          color: purple;
+          opacity: 0.5;
+        }
+        &:focus {
+          box-shadow: 0;
+        }
+      }
+      .input__button {
+        .containers();
+        position: relative;
+        right: 13px;
+        background: purple;
+        color: white;
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+        padding: 1rem;
+        &:hover{
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .todos__list {
+    width: 50%;
+    min-width: 800px;
+    height: 70%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    .list__item {
+      .containers(@flexDirection: row, @justifyContent: space-around);
+      .radius();
+      max-height: 15%;
+      overflow-y: hidden;
+      overflow-x: hidden;
+      background: lightgrey;
+      border-left: 4px solid orange;
+      margin: 1rem 0;
+      padding: 1rem;
+      color: black;
+      &:hover {
+        padding-right: 0;
+        overflow-y: scroll;
+      }
+      .item__text {
+        word-wrap: break-word;
+        min-width: 90%;
+        max-width: 90%;
+        height: auto;
+        margin: auto 0;
+      }
+      .item__deletes {
+        display: flex;
+        align-items: space-between;
+        flex-direction: column;
+        margin: auto 0;
+        .deletes__button {
+          .containers();
+          height: 2rem;
+          width: 2rem;
+          border-radius: 50%;
+          color: orange;
+          background: purple;
+          &:hover{
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .list__item--ignore-scroll{
+      .list__item();
+      &:hover {
+        padding-right: 1rem;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  background: purple;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  background: orange;
+}

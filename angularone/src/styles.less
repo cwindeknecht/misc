@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+.containers(@justifyContent: center, @alignItems: center, @flexDirection: column, @height: 100%, @width: 100%) {
+    display: flex;
+    justify-content: @justifyContent;
+    align-items: @alignItems;
+    flex-direction: @flexDirection;
+    height: @height;
+    width: @width;
+}
+
+.radius(@borderRadius:1rem) {
+    border-radius: 1rem;
+}

@@ -5,7 +5,7 @@ import { Http } from '@angular/http';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.less'],
   animations: [
     trigger('moveInLeft', [
       transition('void=> *', [
@@ -22,10 +22,8 @@ import { Http } from '@angular/http';
 export class AppComponent {
   title = 'Todos';
   todoArray = [];
-
-  addTodo(value) {
-    this.todoArray.push(value);
-  }
+  // Used in the multiple delete buttons of long todo items
+  // lengths = [];
 
   deleteItem(todo) {
     for (let i = 0; i <= this.todoArray.length; i++) {
@@ -35,12 +33,17 @@ export class AppComponent {
     }
   }
 
-  todoSubmit(value: any) {
-    if (value !== '') {
+  todoSubmit(value) {
+    if (value.todo !== '' && value.todo !== null) {
       this.todoArray.push(value.todo);
-    } else {
-      alert('Field required **');
+      // Used in the multiple delete buttons of long todo items
+      // this.lengths.push(new Array(Math.floor(value.todo.length / 150) + 1));
     }
+  }
+
+  // Log from the html
+  log(val) {
+    console.log(`${val}`,val);
   }
 
   // constructor(private http: Http) {

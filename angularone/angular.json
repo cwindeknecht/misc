@@ -135,5 +135,10 @@
       }
     }
   },
-  "defaultProject": "angularone"
+  "defaultProject": "angularone",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "less"
+    }
+  }
 }
