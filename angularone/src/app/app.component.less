@@ -3,7 +3,7 @@
 .todos {
   .containers(@justifyContent: space-around, @width: 100vw, @height: 100vh);
   .todos__form {
-    .containers(@width: 40%, @height: 20%);
+    .containers(@width: 40%, @height: 30%);
     .radius();
     min-width: 650px;
     background: lightgrey;
@@ -13,7 +13,7 @@
       color: orange;
     }
     .form__input {
-      .containers(@flexDirection: row);
+      .containers();
       .input__text-box {
         width: 75%;
         background: orange;
@@ -23,6 +23,7 @@
         border: 0;
         border-top-left-radius: 0.5rem;
         border-bottom-left-radius: 0.5rem;
+        resize: none;
         &::placeholder {
           font-weight: bold;
           color: purple;
@@ -46,6 +47,15 @@
           cursor: pointer;
         }
       }
+    }
+    .form__error--show {
+      opacity: 1;
+      font-size: 12px;
+      color: red;
+    }
+    .form__error--hidden {
+      opacity: 0;
+      color: red;
     }
   }
   .todos__list {

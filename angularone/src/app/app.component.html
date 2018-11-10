@@ -2,7 +2,8 @@
   <form class="todos__form" #todoForm="ngForm" (ngSubmit)="todoSubmit(todoForm.value); todoForm.resetForm()">
     <div class="form__title">Todo App</div>
     <div class="form__input">
-      <input class="input__text-box" type="text" #todo placeholder="Add Todo" name="todo" ngModel />
+      <input class="input__text-box" type="text" placeholder="Todo Title" name="title" ngModel />
+      <textarea class="input__text-box" placeholder="Todo Description" name="description" ngModel></textarea>
       <div class="input__button" (click)="todoSubmit(todoForm.value); todoForm.resetForm()">
         <div class="material-icons button__icon">add</div>
       </div>
@@ -10,11 +11,15 @@
   </form>
   <div class="todos__list">
     <div
-      [ngClass]="todo.length > 200 ? 'list__item' : 'list__item--ignore-scroll'"
+      [ngClass]="todo.title.length > 200 ? 'list__item' : 'list__item--ignore-scroll'"
       [@moveInLeft]
       *ngFor="let todo of todoArray; let i = index"
     >
-      <div class="item__text">{{ todo }}</div>
+      <nav>
+        <a routerLink="/todo-details" class="item__text">{{ todo.title }}</a>
+      </nav>
+      <router-outlet></router-outlet>
+      <!-- <todo-detail [todo]="todo"></todo-detail> -->
       <div class="item__deletes">
         <!--
           I was trying to figure out a good way to have multiple delete buttons so there isn't only one

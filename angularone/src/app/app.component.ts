@@ -22,6 +22,7 @@ import { Http } from '@angular/http';
 export class AppComponent {
   title = 'Todos';
   todoArray = [];
+  todoError = false;
   // Used in the multiple delete buttons of long todo items
   // lengths = [];
 
@@ -34,8 +35,8 @@ export class AppComponent {
   }
 
   todoSubmit(value) {
-    if (value.todo !== '' && value.todo !== null) {
-      this.todoArray.push(value.todo);
+    if (value.title !== '' && value.title !== null) {
+      this.todoArray.push(value);
       // Used in the multiple delete buttons of long todo items
       // this.lengths.push(new Array(Math.floor(value.todo.length / 150) + 1));
     }
@@ -43,7 +44,7 @@ export class AppComponent {
 
   // Log from the html
   log(val) {
-    console.log(`${val}`,val);
+    console.log(`LOG APP`,val);
   }
 
   // constructor(private http: Http) {

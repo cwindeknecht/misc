@@ -5,10 +5,12 @@ import { FormsModule }   from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TodoDetailComponent } from './components/todo-detail.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TodoDetailComponent
   ],
   imports: [
     AppRoutingModule,
@@ -20,3 +22,4 @@ import { AppComponent } from './app.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
