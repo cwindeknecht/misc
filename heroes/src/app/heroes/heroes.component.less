@@ -1,3 +1,44 @@
-.selected {
-    color: orange;
+@import '../../styles.less';
+
+.user-heroes {
+  .containers();
+  .images--background();
+  .image-text();
+  .radius();
+  background-image: url('https://superfamicom.org/images/secret-of-man-fall.png');
+  width: 80vw;
+  .user-heroes__title {
+    .titles--container();
+  }
+  .user-heroes__create {
+    .create__label {
+      .containers(@flexDirection: row);
+      .titles--inner();
+      margin: 0.5rem 0;
+      .label__input {
+        .input();
+      }
+    }
+    .create__button {
+      .buttons();
+      width: auto;
+    }
+  }
+  .user-heroes__list {
+    .containers(@alignItems: flex-start);
+    min-height: 20rem;
+    .list__hero {
+        width: 20%;
+        margin: 1rem;
+        padding: 1rem;
+      .hero__link {
+        text-decoration: none;
+        .link__item {
+            color: @white;
+        }
+      }
+      .hero__delete {
+      }
+    }
+  }
 }

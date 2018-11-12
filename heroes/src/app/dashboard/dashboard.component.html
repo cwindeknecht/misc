@@ -1,11 +1,12 @@
-<h3>Top Heroes</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let hero of heroes" class="col-1-4"
-      routerLink="/detail/{{hero.id}}">
-    <div class="module hero">
-      <h4>{{hero.name}}</h4>
+<div class="dash">
+  <div class="dash__heroes">
+    <div class="heroes__title">Top Heroes</div>
+    <div class="heroes__list">
+      <div *ngIf="heroes.length; else: noTopHeroes">
+        <a *ngFor="let hero of heroes" class="list__link" routerLink="/detail/{{hero.id}}"> {{ hero.name }} </a>
+      </div>
+      <ng-template #noTopHeroes class="list__link"> No Heroes Listed </ng-template>
     </div>
-  </a>
+  </div>
+  <app-hero-search></app-hero-search>
 </div>
-
-<app-hero-search></app-hero-search>
