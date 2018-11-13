@@ -1,0 +1,28 @@
+<div class="user">
+  <div class="user__information" *ngIf="user; else: noUser"></div>
+  <ng-template #noUser class="list__link">
+    <div class="user__form" *ngIf="login; else: register">
+      <div class="form__title">Log In</div>
+      <div class="form__inputs">
+        <input class="inputs__input" [(ngModel)]="username" placeholder="username" />
+        <input class="inputs__input" [(ngModel)]="password" placeholder="password" />
+      </div>
+      <div class="form__buttons">
+        <button class="buttons__button" (click)="loginUser()">Login</button>
+        <button class="buttons__button" (click)="toggleUser(false)">New User?</button>
+      </div>
+    </div>
+    <ng-template #register class="list__link">
+      <div class="form__title">New User Sign Up</div>
+      <div class="form__inputs">
+        <input class="inputs__input" [(ngModel)]="username" placeholder="username" />
+        <input class="inputs__input" [(ngModel)]="password" placeholder="password" />
+        <input class="inputs__input" [(ngModel)]="confirm" placeholder="confirm" />
+      </div>
+      <div class="form__buttons">
+        <button class="buttons__button" (click)="registerUser()">Sign Up</button>
+        <button class="buttons__button" (click)="toggleUser(true)">Returning User?</button>
+      </div>
+    </ng-template>
+  </ng-template>
+</div>

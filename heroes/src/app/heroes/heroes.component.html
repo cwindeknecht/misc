@@ -9,7 +9,7 @@
     </div>
   </div>
 
-  <div class="user-heroes__list" *ngIf="heroes.length; else: noUserHeroes">
+  <div class="user-heroes__list">
     <div class="list__hero" *ngFor="let hero of heroes">
       <a class="hero__link" routerLink="/detail/{{hero.id}}">
         <div class="link__item">{{ hero.name }}</div>
@@ -17,5 +17,4 @@
       <button class="hero__delete" title="delete hero" (click)="delete(hero)">x</button>
     </div>
   </div>
-  <ng-template #noUserHeroes class="list__link"> No Heroes Listed </ng-template>
 </div>
