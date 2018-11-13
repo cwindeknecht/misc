@@ -2,7 +2,7 @@
   <div class="search__title">Hero Search</div>
   <input #searchBox class="search__input" (input)="search(searchBox.value)" />
   <div class="search__results">
-    <div *ngFor="let hero of (heroes$ | async)">
+    <div class="results__result" *ngFor="let hero of (heroes$ | async)">
       <a routerLink="/detail/{{hero.id}}"> {{ hero.name }} </a>
     </div>
   </div>

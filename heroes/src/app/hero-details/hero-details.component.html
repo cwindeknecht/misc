@@ -1,11 +1,12 @@
-<div *ngIf="hero">
-  <h2>{{hero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{hero.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="hero.name" placeholder="name"/>
-    </label>
+<div class="details" *ngIf="hero; else: noHero">
+  <div class="details__container">
+    <div class="container__title">{{ hero.name | uppercase }}</div>
+    <div class="container__item">id:{{ hero.id }}</div>
+    <div class="container__item">
+      Name: <input class="item__input" [(ngModel)]="hero.name" placeholder="name" />
+      <button class="container__button" (click)="save()">Update</button>
+    </div>
+    <button class="container__button" (click)="goBack()">Return</button>
   </div>
-  <button (click)="goBack()">go back</button>
-  <button (click)="save()">save</button>
 </div>
+<ng-template #noTopHeroes class="details"> </ng-template>

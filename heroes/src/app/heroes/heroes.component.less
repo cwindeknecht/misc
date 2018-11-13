@@ -1,12 +1,14 @@
 @import '../../styles.less';
 
 .user-heroes {
-  .containers();
+  .containers(@justifyContent: flex-start);
   .images--background();
   .image-text();
   .radius();
   background-image: url('https://superfamicom.org/images/secret-of-man-fall.png');
+  background-size: 80vw; 
   width: 80vw;
+  min-height: 25rem;
   .user-heroes__title {
     .titles--container();
   }
@@ -40,7 +42,7 @@
       .hero__link {
         text-decoration: none;
         .link__item {
-          color: @primary;
+          color: @white;
         }
       }
       .hero__delete {

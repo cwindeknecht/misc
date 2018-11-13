@@ -10,11 +10,13 @@ import { HeroService } from '../hero.service';
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[];
+  deleted: Hero[] = [];
 
   constructor(private heroService: HeroService) {}
 
   ngOnInit() {
     this.getHeroes();
+
   }
 
   getHeroes(): void {
@@ -34,7 +36,18 @@ export class HeroesComponent implements OnInit {
   delete(hero: Hero): void {
     if (confirm('Are you sure you want to delete' + hero.name + '?')) {
       this.heroes = this.heroes.filter(h => h !== hero);
+      this.deleted.push(hero);
       this.heroService.deleteHero(hero).subscribe();
+    }
+  }
+
+  undo(): void {
+    console.log('this.deleted', this.deleted);
+    console.log('this.heroes', this.heroes);
+    if (this.deleted.length) {
+      this.heroes.push(this.deleted[this.delete.length - 1]);
+    } else {
+      alert('No hero has been deleted recently.');
     }
   }
 }

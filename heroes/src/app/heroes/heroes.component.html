@@ -5,6 +5,7 @@
       Hero name: <input class="label__input" #heroName />
       <!-- (click) passes input value to add() and then clears the input -->
       <button class="create__button" (click)="add(heroName.value); heroName.value = ''">Create Hero</button>
+      <button class="create__button" (click)="undo()">Un-Delete</button>
     </div>
   </div>
 
