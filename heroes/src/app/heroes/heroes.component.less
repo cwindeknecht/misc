@@ -25,19 +25,27 @@
     }
   }
   .user-heroes__list {
-    .containers(@alignItems: flex-start);
-    min-height: 20rem;
+    .containers(@flexDirection: row, @justifyContent: flex-start, @alignItems: flex-start);
+    flex-wrap: wrap;
+    min-height: 10rem;
     .list__hero {
-        width: 20%;
-        margin: 1rem;
-        padding: 1rem;
+      .containers(@flexDirection: row);
+      .titles--inner();
+      .radius();
+      background: @component-bg;
+      width: 20%;
+      margin: 1rem;
+      padding: 1rem;
+      min-height: 10rem;
       .hero__link {
         text-decoration: none;
         .link__item {
-            color: @white;
+          color: @primary;
         }
       }
       .hero__delete {
+        .buttons();
+        margin: 0 1rem;
       }
     }
   }
